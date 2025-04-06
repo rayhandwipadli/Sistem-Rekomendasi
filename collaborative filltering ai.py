@@ -11,7 +11,7 @@ def connect_db():
         host="localhost",
         user="root",
         password="",
-        database="db_rejiku"
+        database="dbkaliansendiri"
     )
 
 def get_transaction_data():
@@ -72,7 +72,7 @@ def get_recommendations(produk_id):
     idx = product_index[produk_id]
     similarity_scores = similarity_matrix[idx]
     
-    recommended_indices = np.argsort(similarity_scores)[::-1][1:6]  # Ambil 5 teratas selain produk itu sendiri
+    recommended_indices = np.argsort(similarity_scores)[::-1][1:6]  # ini akan mengambil 5 data teratas dari produk kalian
     recommended_products = [all_products[i] for i in recommended_indices]
     
     return get_product_details(recommended_products)
